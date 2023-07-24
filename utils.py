@@ -1,8 +1,10 @@
+import time
 from bs4 import BeautifulSoup
 import random
 import re
 import requests
 import pandas as pd
+from unidecode import unidecode
 
 
 # Declare all needed variables here
@@ -78,6 +80,7 @@ def getCountriesData(page):
 
     # Parse the linked page's HTML content
     linked_page_soup = BeautifulSoup(linked_page_response.text, "html.parser")
+    time.sleep(5)
     indicators = linked_page_soup.find_all(
         "div", {'class': 'indicator-item__wrapper'})
     indicators_values = getIndicatorsValues(indicators)
@@ -89,7 +92,7 @@ def getCountriesData(page):
 
 
 def getPageData(page_number):
-    url = f"https://api.worldbank.org/v2/country/all?page={page_number}&format=json"
+    url = f"https://api.worldbank.org/v2/fr/country/all?page={page_number}&format=json"
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
@@ -124,5 +127,6 @@ def getCountryCodes() :
             all_country_codes.extend(country_data)
     
     country_codes_df = pd.DataFrame(all_country_codes)
+
 
     return country_codes_df

@@ -8,11 +8,11 @@ def extract():
     Return a dataframe after extracting the indicators from each country
 
     """
-    batch_size = 20  # Set batch size and initialize counters
+    batch_size = 60  # Set batch size and initialize counters
     _, countries_pages = getCountries()
     current_batch = 0
     indicators_titles_list = getIndicatorsTitles()
-    total_batches = (len(countries_pages)//20)//batch_size
+    total_batches = (len(countries_pages))//batch_size
 
     # save data to dataframe
     df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
@@ -45,19 +45,17 @@ def extract():
             row_data[title] = value
 
         # Append the row data to the DataFrame
-        df = df.append(row_data, ignore_index=True)
+        df = df._append(row_data, ignore_index=True)
 
-    # Save the DataFrame to a CSV file
-    file_path = os.path.join('data', 'indicators.csv')
-    df.to_csv(file_path, index=False)
+    #extract and save the country codes into a ne dataframe
+    country_codes_df = getCountryCodes()
 
-    # Save country codes into a new dataframe and csv file
-    country_codes_dataframe = getCountryCodes()
-    path = os.path.join("data","country_codes.csv")
-    country_codes_dataframe.to_csv(path, index=False)
-    print(country_codes_dataframe)
+    #save the final results
+    path1 = os.path.join("data","indicators.csv")
+    path2 = os.path.join("data","country_codes.csv")
+    df.to_csv(path1, index=False)
+    country_codes_df.to_csv(path2, index=False)
 
-    return "sucess"
 
 
 def transform(dataframe):
@@ -72,3 +70,8 @@ def load(dataframe):
     Load the DataFrame into the target destination.
     """
     pass
+
+if __name__ == "__main__":
+    extract()
+    transform()
+    load()
