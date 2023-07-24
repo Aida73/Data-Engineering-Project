@@ -73,5 +73,3 @@ def load(dataframe):
 
 if __name__ == "__main__":
     extract()
-    transform()
-    load()
