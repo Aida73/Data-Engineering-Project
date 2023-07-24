@@ -17,6 +17,7 @@ def extract():
     # save data to dataframe
     df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
 
+
     # Iterate over the sections in batches
     for batch in range(total_batches + 1):
         # Get the current batch of sections
@@ -50,7 +51,13 @@ def extract():
     file_path = os.path.join('data', 'indicators.csv')
     df.to_csv(file_path, index=False)
 
-    return df.head()
+    # Save country codes into a new dataframe and csv file
+    country_codes_dataframe = getCountryCodes()
+    path = os.path.join("data","country_codes.csv")
+    country_codes_dataframe.to_csv(path, index=False)
+    print(country_codes_dataframe)
+
+    return "sucess"
 
 
 def transform(dataframe):
