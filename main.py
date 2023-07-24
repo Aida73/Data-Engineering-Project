@@ -35,6 +35,7 @@ def extract():
 
     # create the Dataframe
     for country, values in countries_data.items():
+        print("Creating dataframe")
         # Create a dictionary to hold the row data
         row_data = {'Country': country}
 
@@ -44,10 +45,11 @@ def extract():
             row_data[title] = value
 
         # Append the row data to the DataFrame
-        df = df.append(row_data, ignore_index=True)
+        df = df._append(row_data, ignore_index=True)
 
     # Save the DataFrame to a CSV file
-    file_path = os.path.join('data', 'indicators.csv')
+    print("it is saving....")
+    file_path = os.path.join('data', 'indicators2.csv')
     df.to_csv(file_path, index=False)
 
     return df.head()
@@ -65,3 +67,7 @@ def load(dataframe):
     Load the DataFrame into the target destination.
     """
     pass
+
+
+if __name__ == "__main__":
+    extract()
