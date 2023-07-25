@@ -1,0 +1,300 @@
+,id,name,region
+0,ABW,Aruba,Amérique latine et Caraïbes
+1,AFE,,Agrégats
+2,AFG,Afghanistan,Asie du Sud
+3,AFR,,Agrégats
+4,AFW,,Agrégats
+5,AGO,Angola,Afrique subsaharienne
+6,ALB,Albanie,Europe et Asie centrale
+7,AND,Andorre,Europe et Asie centrale
+8,ARB,Le monde arabe,Agrégats
+9,ARE,Émirats arabes unis,Afrique du Nord et Moyen-Orient
+10,ARG,Argentine,Amérique latine et Caraïbes
+11,ARM,Arménie,Europe et Asie centrale
+12,ASM,Samoa américaines,Asie de l’Est et Pacifique
+13,ATG,Antigua-et-Barbuda,Amérique latine et Caraïbes
+14,AUS,Australie,Asie de l’Est et Pacifique
+15,AUT,Autriche,Europe et Asie centrale
+16,AZE,Azerbaïdjan,Europe et Asie centrale
+17,BDI,Burundi,Afrique subsaharienne
+18,BEA,,Agrégats
+19,BEC,,Agrégats
+20,BEL,Belgique,Europe et Asie centrale
+21,BEN,Bénin,Afrique subsaharienne
+22,BFA,Burkina Faso,Afrique subsaharienne
+23,BGD,Bangladesh,Asie du Sud
+24,BGR,Bulgarie,Europe et Asie centrale
+25,BHI,,Agrégats
+26,BHR,Bahreïn,Afrique du Nord et Moyen-Orient
+27,BHS,Bahamas,Amérique latine et Caraïbes
+28,BIH,Bosnie-Herzégovine,Europe et Asie centrale
+29,BLA,,Agrégats
+30,BLR,Bélarus,Europe et Asie centrale
+31,BLZ,Belize,Amérique latine et Caraïbes
+32,BMN,,Agrégats
+33,BMU,Bermudes,Amérique du Nord
+34,BOL,Bolivie,Amérique latine et Caraïbes
+35,BRA,Brésil,Amérique latine et Caraïbes
+36,BRB,Barbade,Amérique latine et Caraïbes
+37,BRN,Brunéi Darussalam,Asie de l’Est et Pacifique
+38,BSS,,Agrégats
+39,BTN,Bhoutan,Asie du Sud
+40,BWA,Botswana,Afrique subsaharienne
+41,CAA,,Agrégats
+42,CAF,République centrafricaine,Afrique subsaharienne
+43,CAN,Canada,Amérique du Nord
+44,CEA,,Agrégats
+45,CEB,"Europe centrale et les pays baltes
+",Agrégats
+46,CEU,,Agrégats
+47,CHE,Suisse,Europe et Asie centrale
+48,CHI,Îles Anglo-Normandes,Europe et Asie centrale
+49,CHL,Chili,Amérique latine et Caraïbes
+50,CHN,Chine,Asie de l’Est et Pacifique
+51,CIV,Côte d'Ivoire,Afrique subsaharienne
+52,CLA,,Agrégats
+53,CME,,Agrégats
+54,CMR,Cameroun,Afrique subsaharienne
+55,COD,"Congo, République démocratique du",Afrique subsaharienne
+56,COG,"Congo, République du",Afrique subsaharienne
+57,COL,Colombie,Amérique latine et Caraïbes
+58,COM,Comores,Afrique subsaharienne
+59,CPV,Cabo Verde ,Afrique subsaharienne
+60,CRI,Costa Rica,Amérique latine et Caraïbes
+61,CSA,,Agrégats
+62,CSS,Petits états des Caraïbes,Agrégats
+63,CUB,Cuba,Amérique latine et Caraïbes
+64,CUW,Curacao,Amérique latine et Caraïbes
+65,CYM,Îles Caïmans,Amérique latine et Caraïbes
+66,CYP,Chypre,Europe et Asie centrale
+67,CZE,République tchèque,Europe et Asie centrale
+68,DEA,,Agrégats
+69,DEC,,Agrégats
+70,DEU,Allemagne,Europe et Asie centrale
+71,DJI,Djibouti,Afrique du Nord et Moyen-Orient
+72,DLA,,Agrégats
+73,DMA,Dominique,Amérique latine et Caraïbes
+74,DMN,,Agrégats
+75,DNK,Danemark,Europe et Asie centrale
+76,DNS,,Agrégats
+77,DOM,République dominicaine,Amérique latine et Caraïbes
+78,DSA,,Agrégats
+79,DSF,,Agrégats
+80,DSS,,Agrégats
+81,DZA,Algérie,Afrique du Nord et Moyen-Orient
+82,EAP,Asie de l’Est et Pacifique (hors revenu élevé),Agrégats
+83,EAR,de dividende précoce démographique,Agrégats
+84,EAS,Asie de l’Est et Pacifique,Agrégats
+85,ECA,Europe et Asie centrale (hors revenu élevé),Agrégats
+86,ECS,Europe et Asie centrale,Agrégats
+87,ECU,Équateur,Amérique latine et Caraïbes
+88,EGY,"Égypte, République arabe d’",Afrique du Nord et Moyen-Orient
+89,EMU,Zone euro,Agrégats
+90,ERI,Érythrée,Afrique subsaharienne
+91,ESP,Espagne,Europe et Asie centrale
+92,EST,Estonie,Europe et Asie centrale
+93,ETH,Éthiopie,Afrique subsaharienne
+94,EUU,Union européenne,Agrégats
+95,FCS,"Fragile et les situations de conflit touchées
+",Agrégats
+96,FIN,Finlande,Europe et Asie centrale
+97,FJI,Fidji,Asie de l’Est et Pacifique
+98,FRA,France,Europe et Asie centrale
+99,FRO,Îles Féroé,Europe et Asie centrale
+100,FSM,"Micronésie, États fédérés de",Asie de l’Est et Pacifique
+101,FXS,,Agrégats
+102,GAB,Gabon,Afrique subsaharienne
+103,GBR,Royaume-Uni,Europe et Asie centrale
+104,GEO,Géorgie,Europe et Asie centrale
+105,GHA,Ghana,Afrique subsaharienne
+106,GIB,Gibraltar,Europe et Asie centrale
+107,GIN,Guinée,Afrique subsaharienne
+108,GMB,Gambie,Afrique subsaharienne
+109,GNB,Guinée-Bissau,Afrique subsaharienne
+110,GNQ,Guinée équatoriale,Afrique subsaharienne
+111,GRC,Grèce,Europe et Asie centrale
+112,GRD,Grenade,Amérique latine et Caraïbes
+113,GRL,Groenland,Europe et Asie centrale
+114,GTM,Guatemala,Amérique latine et Caraïbes
+115,GUM,Guam,Asie de l’Est et Pacifique
+116,GUY,Guyana,Amérique latine et Caraïbes
+117,HIC,Revenu élevé,Agrégats
+118,HKG,"Chine, RAS de Hong Kong",Asie de l’Est et Pacifique
+119,HND,Honduras,Amérique latine et Caraïbes
+120,HPC,Pays pauvres très endettés (PPTE),Agrégats
+121,HRV,Croatie,Europe et Asie centrale
+122,HTI,Haïti,Amérique latine et Caraïbes
+123,HUN,Hongrie,Europe et Asie centrale
+124,IBB,,Agrégats
+125,IBD,BIRD seulement,Agrégats
+126,IBT,BIRD et IDA,Agrégats
+127,IDA,IDA totale,Agrégats
+128,IDB,IDA mélange,Agrégats
+129,IDN,Indonésie,Asie de l’Est et Pacifique
+130,IDX,IDA seulement,Agrégats
+131,IMN,Île de Man,Europe et Asie centrale
+132,IND,Inde,Asie du Sud
+133,INX,Non classifié,Agrégats
+134,IRL,Irlande,Europe et Asie centrale
+135,IRN,"Iran, République islamique d’",Afrique du Nord et Moyen-Orient
+136,IRQ,Iraq,Afrique du Nord et Moyen-Orient
+137,ISL,Islande,Europe et Asie centrale
+138,ISR,Israël,Afrique du Nord et Moyen-Orient
+139,ITA,Italie,Europe et Asie centrale
+140,JAM,Jamaïque,Amérique latine et Caraïbes
+141,JOR,Jordanie,Afrique du Nord et Moyen-Orient
+142,JPN,Japon,Asie de l’Est et Pacifique
+143,KAZ,Kazakhstan,Europe et Asie centrale
+144,KEN,Kenya,Afrique subsaharienne
+145,KGZ,République kirghize,Europe et Asie centrale
+146,KHM,Cambodge,Asie de l’Est et Pacifique
+147,KIR,Kiribati,Asie de l’Est et Pacifique
+148,KNA,Saint-Kitts-et-Nevis,Amérique latine et Caraïbes
+149,KOR,"Corée, République de",Asie de l’Est et Pacifique
+150,KWT,Koweït,Afrique du Nord et Moyen-Orient
+151,LAC,Amérique latine et Caraïbes (hors revenu élevé),Agrégats
+152,LAO,République démocratique populaire lao,Asie de l’Est et Pacifique
+153,LBN,Liban,Afrique du Nord et Moyen-Orient
+154,LBR,Libéria,Afrique subsaharienne
+155,LBY,Libye,Afrique du Nord et Moyen-Orient
+156,LCA,Sainte-Lucie,Amérique latine et Caraïbes
+157,LCN,Amérique latine et Caraïbes,Agrégats
+158,LDC,Pays les moins avancés: classement de l’ONU,Agrégats
+159,LIC,Faible revenu,Agrégats
+160,LIE,Liechtenstein,Europe et Asie centrale
+161,LKA,Sri Lanka,Asie du Sud
+162,LMC,"Revenu intermédiaire, tranche inférieure",Agrégats
+163,LMY,Revenu faible et intermédiaire,Agrégats
+164,LSO,Lesotho,Afrique subsaharienne
+165,LTE,de dividende tardif démographique,Agrégats
+166,LTU,Lituanie,Europe et Asie centrale
+167,LUX,Luxembourg,Europe et Asie centrale
+168,LVA,Lettonie,Europe et Asie centrale
+169,MAC,"Région administrative spéciale de Macao, Chine",Asie de l’Est et Pacifique
+170,MAF,Saint-Martin (fr),Amérique latine et Caraïbes
+171,MAR,Maroc,Afrique du Nord et Moyen-Orient
+172,MCO,Monaco,Europe et Asie centrale
+173,MDA,Moldova,Europe et Asie centrale
+174,MDE,,Agrégats
+175,MDG,Madagascar,Afrique subsaharienne
+176,MDV,Maldives,Asie du Sud
+177,MEA,Afrique du Nord et Moyen-Orient,Agrégats
+178,MEX,Mexique,Amérique latine et Caraïbes
+179,MHL,Îles Marshall,Asie de l’Est et Pacifique
+180,MIC,Revenu intermédiaire,Agrégats
+181,MKD,Macédoine du Nord,Europe et Asie centrale
+182,MLI,Mali,Afrique subsaharienne
+183,MLT,Malte,Afrique du Nord et Moyen-Orient
+184,MMR,Myanmar,Asie de l’Est et Pacifique
+185,MNA,Afrique du Nord et Moyen-Orient (hors revenu élevé),Agrégats
+186,MNE,Monténégro,Europe et Asie centrale
+187,MNG,Mongolie,Asie de l’Est et Pacifique
+188,MNP,Mariannes,Asie de l’Est et Pacifique
+189,MOZ,Mozambique,Afrique subsaharienne
+190,MRT,Mauritanie,Afrique subsaharienne
+191,MUS,Maurice,Afrique subsaharienne
+192,MWI,Malawi,Afrique subsaharienne
+193,MYS,Malaisie,Asie de l’Est et Pacifique
+194,NAC,Amérique du Nord,Agrégats
+195,NAF,,Agrégats
+196,NAM,Namibie,Afrique subsaharienne
+197,NCL,Nouvelle-Calédonie,Asie de l’Est et Pacifique
+198,NER,Niger,Afrique subsaharienne
+199,NGA,Nigéria,Afrique subsaharienne
+200,NIC,Nicaragua,Amérique latine et Caraïbes
+201,NLD,Pays-Bas,Europe et Asie centrale
+202,NOR,Norvège,Europe et Asie centrale
+203,NPL,Népal,Asie du Sud
+204,NRS,,Agrégats
+205,NRU,Nauru,Asie de l’Est et Pacifique
+206,NXS,,Agrégats
+207,NZL,Nouvelle-Zélande,Asie de l’Est et Pacifique
+208,OED,Pays membres de l'OCDE,Agrégats
+209,OMN,Oman,Afrique du Nord et Moyen-Orient
+210,OSS,Autres petits états,Agrégats
+211,PAK,Pakistan,Asie du Sud
+212,PAN,Panama,Amérique latine et Caraïbes
+213,PER,Pérou,Amérique latine et Caraïbes
+214,PHL,Philippines,Asie de l’Est et Pacifique
+215,PLW,Palaos,Asie de l’Est et Pacifique
+216,PNG,Papouasie-Nouvelle-Guinée,Asie de l’Est et Pacifique
+217,POL,Pologne,Europe et Asie centrale
+218,PRE,de Pré-dividende démographique,Agrégats
+219,PRI,Porto Rico,Amérique latine et Caraïbes
+220,PRK,"Corée, République démocratique de",Asie de l’Est et Pacifique
+221,PRT,Portugal,Europe et Asie centrale
+222,PRY,Paraguay,Amérique latine et Caraïbes
+223,PSE,Cisjordanie et Gaza,Afrique du Nord et Moyen-Orient
+224,PSS,Petits états insulaires du Pacifique,Agrégats
+225,PST,de Post-dividende démographique,Agrégats
+226,PYF,Polynésie française,Asie de l’Est et Pacifique
+227,QAT,Qatar,Afrique du Nord et Moyen-Orient
+228,ROU,Roumanie,Europe et Asie centrale
+229,RRS,,Agrégats
+230,RUS,Fédération de Russie,Europe et Asie centrale
+231,RWA,Rwanda,Afrique subsaharienne
+232,SAS,Asie du Sud,Agrégats
+233,SAU,Arabie saoudite,Afrique du Nord et Moyen-Orient
+234,SDN,Soudan,Afrique subsaharienne
+235,SEN,Sénégal,Afrique subsaharienne
+236,SGP,Singapour,Asie de l’Est et Pacifique
+237,SLB,Îles Salomon,Asie de l’Est et Pacifique
+238,SLE,Sierra Leone,Afrique subsaharienne
+239,SLV,El Salvador,Amérique latine et Caraïbes
+240,SMR,Saint-Marin,Europe et Asie centrale
+241,SOM,Somalie,Afrique subsaharienne
+242,SRB,Serbie,Europe et Asie centrale
+243,SSA,Afrique subsaharienne (hors revenu élevé),Agrégats
+244,SSD,Soudan du Sud,Afrique subsaharienne
+245,SSF,Afrique subsaharienne,Agrégats
+246,SST,Petits états,Agrégats
+247,STP,Sao Tomé-et-Principe,Afrique subsaharienne
+248,SUR,Suriname,Amérique latine et Caraïbes
+249,SVK,République slovaque,Europe et Asie centrale
+250,SVN,Slovénie,Europe et Asie centrale
+251,SWE,Suède,Europe et Asie centrale
+252,SWZ,Eswatini,Afrique subsaharienne
+253,SXM,Sint Maarten (Dutch part),Amérique latine et Caraïbes
+254,SXZ,,Agrégats
+255,SYC,Seychelles,Afrique subsaharienne
+256,SYR,République arabe syrienne,Afrique du Nord et Moyen-Orient
+257,TCA,Îles Turques-et-Caïques,Amérique latine et Caraïbes
+258,TCD,Tchad,Afrique subsaharienne
+259,TEA,Asie de l’Est et Pacifique (BIRD et IDA),Agrégats
+260,TEC,Europe et Asie centrale (BIRD et IDA),Agrégats
+261,TGO,Togo,Afrique subsaharienne
+262,THA,Thaïlande,Asie de l’Est et Pacifique
+263,TJK,Tadjikistan,Europe et Asie centrale
+264,TKM,Turkménistan,Europe et Asie centrale
+265,TLA,Amérique latine et Caraïbes (BIRD et IDA),Agrégats
+266,TLS,Timor-Leste,Asie de l’Est et Pacifique
+267,TMN,Afrique du Nord et Moyen-Orient (BIRD et IDA),Agrégats
+268,TON,Tonga,Asie de l’Est et Pacifique
+269,TSA,Asie du Sud (BIRD et IDA),Agrégats
+270,TSS,Afrique subsaharienne (BIRD et IDA),Agrégats
+271,TTO,Trinité-et-Tobago,Amérique latine et Caraïbes
+272,TUN,Tunisie,Afrique du Nord et Moyen-Orient
+273,TUR,Turquie,Europe et Asie centrale
+274,TUV,Tuvalu,Asie de l’Est et Pacifique
+275,TWN,"Taiwan, en Chine",Asie de l’Est et Pacifique
+276,TZA,Tanzanie,Afrique subsaharienne
+277,UGA,Ouganda,Afrique subsaharienne
+278,UKR,Ukraine,Europe et Asie centrale
+279,UMC,"Revenu intermédiaire, tranche supérieure",Agrégats
+280,URY,Uruguay,Amérique latine et Caraïbes
+281,USA,États-Unis,Amérique du Nord
+282,UZB,Ouzbékistan,Europe et Asie centrale
+283,VCT,Saint-Vincent-et-les Grenadines,Amérique latine et Caraïbes
+284,VEN,Venezuela,Amérique latine et Caraïbes
+285,VGB,Îles Vierges britanniques,Amérique latine et Caraïbes
+286,VIR,Îles Vierges (EU),Amérique latine et Caraïbes
+287,VNM,Viet Nam,Asie de l’Est et Pacifique
+288,VUT,Vanuatu,Asie de l’Est et Pacifique
+289,WLD,Monde,Agrégats
+290,WSM,Samoa,Asie de l’Est et Pacifique
+291,XKX,Kosovo,Europe et Asie centrale
+292,XZN,,Agrégats
+293,YEM,"Yémen, Rép. du",Afrique du Nord et Moyen-Orient
+294,ZAF,Afrique du Sud,Afrique subsaharienne
+295,ZMB,Zambie,Afrique subsaharienne
+296,ZWE,Zimbabwe,Afrique subsaharienne
