@@ -14,8 +14,8 @@ def extract():
     country_codes_df = getCountryCodes()
 
     # save the final results
-    save_data_to_csv("indicators3.csv", indicators_data)
-    save_data_to_csv("country_codes2.csv", country_codes_df)
+    save_data_to_csv("indicators.csv", indicators_data)
+    save_data_to_csv("country_codes.csv", country_codes_df)
 
 
 if __name__ == "__main__":
