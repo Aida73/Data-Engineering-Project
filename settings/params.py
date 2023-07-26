@@ -25,22 +25,27 @@ COUNTRIES_DATA = dict()
 FILTERS_PARAMS = {
     "MIN_COMPLETION_RATE": 0.5,
     "NAN_TRESHOLD": 80,
-    "TEST": 0.9,
-    "FEATURES": [
-        "id",
-        "country",
-        "region",
-        "population, total",
-        "migration nette",
-        "croissance du pib (% annuel)",
-        "chomage, total (% de la population) (estimation modelisee oit)",
-        "inflation, prix a la consommation (% annuel)",
-        "acces a l'electricite (% de la population)",
-        "indice du capital humain (echelle comprise entre 0 et 1)",
-        "income group"
-    ],
+    "FEATURES": {
+        "id": "code_pays",
+        "country": "pays",
+        "region": "region",
+        "population, total": "population_totale",
+        "migration nette": "migration nette",
+        "croissance du pib (% annuel)": "croissance annuelle du PIB",
+        "chomage, total (% de la population) (estimation modelisee oit)": "pourcentage total de la population au chomage",
+        "inflation, prix a la consommation (% annuel)": "inflation, prix annuel a la consommation",
+        "acces a l'electricite (% de la population)": "acces a l'electricite(%population)",
+        "indice du capital humain (echelle comprise entre 0 et 1)": "indice du capital humain (indice entre 0 et 1)",
+        "income group": "niveau de vie"
+    },
     "FEATURES_STR": {
         "country",
         "id"
+    },
+    "INCOME_MAPPING":{
+        'Low income': 'faible', 
+        'Lower middle income': 'moyen', 
+        'Upper middle income': '>moyenne',
+       'High income': 'eleve'
     }
 }
