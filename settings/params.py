@@ -49,3 +49,5 @@ FILTERS_PARAMS = {
        'High income': 'eleve'
     }
 }
+
+FINAL_DATASET_NAME = "word_bank_indicators.csv"
