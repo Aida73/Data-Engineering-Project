@@ -87,7 +87,7 @@ def getIndicatorsDataframe():
     _, countries_pages = getCountries()
     current_batch = 0
     indicators_titles_list = getIndicatorsTitles()
-    total_batches = (len(countries_pages)//20)//batch_size
+    total_batches = (len(countries_pages))//batch_size
 
     # save data to dataframe
     df = pd.DataFrame(columns=['Country'] + indicators_titles_list)

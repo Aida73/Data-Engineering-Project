@@ -18,5 +18,4 @@ def extract():
     save_data_to_csv("country_codes.csv", country_codes_df)
 
 
-if __name__ == "__main__":
-    extract()
+extract()
