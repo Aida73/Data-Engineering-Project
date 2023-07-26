@@ -9,7 +9,8 @@ def transform():
 
     final_dataset = merge_datasets(cleaned_dataframes)
 
-    save_data_to_csv("final_dataset.csv", final_dataset)
+    if final_dataset:
+        save_data_to_csv(FINAL_DATASET_NAME, final_dataset)
 
 
 transform()
