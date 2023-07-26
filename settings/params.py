@@ -6,10 +6,13 @@ HOME_DIR = Path.cwd()
 # data
 DATA_DIR = Path(HOME_DIR, "data")
 
+# report
+REPORT_DIR = Path(HOME_DIR, "reports")
+
 # urls to scrape
 
 URLS = {
-    "bm_url": "https://donnees.banquemondiale.org/pays"
+    'bm_url': 'https://donnees.banquemondiale.org/pays'
 }
 
 # change randomly header for skipping scrappers limitations
@@ -26,21 +29,23 @@ FILTERS_PARAMS = {
     "MIN_COMPLETION_RATE": 0.5,
     "NAN_TRESHOLD": 80,
     "FEATURES": {
-        "id": "code_pays",
-        "country": "pays",
-        "region": "region",
-        "population, total": "population_totale",
-        "migration nette": "migration nette",
-        "croissance du pib (% annuel)": "croissance annuelle du PIB",
-        "chomage, total (% de la population) (estimation modelisee oit)": "pourcentage total de la population au chomage",
-        "inflation, prix a la consommation (% annuel)": "inflation, prix annuel a la consommation",
+        'id': 'code_pays',
+        'country': 'pays',
+        'region': 'region',
+        'population, total': 'population_totale',
+        'migration nette': 'migration nette',
+        'croissance du pib (% annuel)': 'croissance annuelle du PIB',
+        'chomage, total (% de la population) (estimation modelisee oit)': 'pourcentage total de la population au chomage',
+        'inflation, prix a la consommation (% annuel)': 'inflation, prix annuel a la consommation',
         "acces a l'electricite (% de la population)": "acces a l'electricite(%population)",
-        "indice du capital humain (echelle comprise entre 0 et 1)": "indice du capital humain (indice entre 0 et 1)",
-        "income group": "niveau de vie"
+        'indice du capital humain (echelle comprise entre 0 et 1)': 'indice du capital humain (indice entre 0 et 1)',
+        'income group': 'niveau de vie'
     },
     "FEATURES_STR": {
-        "country",
-        "id"
+        'country',
+        "id",
+        'region',
+        'income group'
     },
     "INCOME_MAPPING":{
         'Low income': 'faible', 
