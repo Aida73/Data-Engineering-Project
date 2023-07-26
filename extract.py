@@ -1,5 +1,5 @@
 import pandas as pd
-from params import *
+from settings.params import *
 from utils import *
 
 

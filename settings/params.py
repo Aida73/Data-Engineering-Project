@@ -20,3 +20,27 @@ USER_AGENTS_LIST = [
 ]
 # will stock all the data about the indicators
 COUNTRIES_DATA = dict()
+
+
+FILTERS_PARAMS = {
+    "MIN_COMPLETION_RATE": 0.5,
+    "NAN_TRESHOLD": 80,
+    "TEST": 0.9,
+    "FEATURES": [
+        "id",
+        "country",
+        "region",
+        "population, total",
+        "migration nette",
+        "croissance du pib (% annuel)",
+        "chomage, total (% de la population) (estimation modelisee oit)",
+        "inflation, prix a la consommation (% annuel)",
+        "acces a l'electricite (% de la population)",
+        "indice du capital humain (echelle comprise entre 0 et 1)",
+        "income group"
+    ],
+    "FEATURES_STR": {
+        "country",
+        "id"
+    }
+}

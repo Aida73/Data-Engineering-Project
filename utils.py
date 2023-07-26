@@ -1,25 +1,17 @@
 from bs4 import BeautifulSoup
 import pandas as pd
-from params import *
+from settings.params import *
 from pathlib import Path
 import random
 import re
 import requests
 import time
+import unidecode
 
 
 def getSoup(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser')
-
-
-def getCountryName(url):
-    regex_pattern = r"/pays/(\w+)"
-    matches = re.findall(regex_pattern, url)
-    if matches:
-        country_name = matches[0]
-        return country_name
-    return None
 
 
 def getCountries():
@@ -77,7 +69,8 @@ def getCountriesData(page):
     print(page)
     print(len(indicators_values))
     if len(indicators_values) > 0:
-        country_name = getCountryName(page)
+        country_name = unidecode.unidecode(linked_page_soup.find(
+            "div", {"class": "cardheader"}).find("h1").text)
         COUNTRIES_DATA[country_name] = indicators_values
 
 
@@ -87,7 +80,7 @@ def getIndicatorsDataframe():
     _, countries_pages = getCountries()
     current_batch = 0
     indicators_titles_list = getIndicatorsTitles()
-    total_batches = (len(countries_pages)//20)//batch_size
+    total_batches = (len(countries_pages))//batch_size
 
     # save data to dataframe
     df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
@@ -109,8 +102,8 @@ def getIndicatorsDataframe():
         # time.sleep(5)
 
     # create the Dataframe
+    print("Creating dataframe")
     for country, values in COUNTRIES_DATA.items():
-        print("Creating dataframe")
         # Create a dictionary to hold the row data
         row_data = {'Country': country}
 
