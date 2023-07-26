@@ -1,25 +1,18 @@
+import os
 from bs4 import BeautifulSoup
 import pandas as pd
-from params import *
+from settings.params import *
 from pathlib import Path
 import random
 import re
 import requests
 import time
+import unidecode
 
 
 def getSoup(url):
     page = requests.get(url)
     return BeautifulSoup(page.content, 'html.parser')
-
-
-def getCountryName(url):
-    regex_pattern = r"/pays/(\w+)"
-    matches = re.findall(regex_pattern, url)
-    if matches:
-        country_name = matches[0]
-        return country_name
-    return None
 
 
 def getCountries():
@@ -77,7 +70,8 @@ def getCountriesData(page):
     print(page)
     print(len(indicators_values))
     if len(indicators_values) > 0:
-        country_name = getCountryName(page)
+        country_name = unidecode.unidecode(linked_page_soup.find(
+            "div", {"class": "cardheader"}).find("h1").text)
         COUNTRIES_DATA[country_name] = indicators_values
 
 
@@ -109,8 +103,8 @@ def getIndicatorsDataframe():
         # time.sleep(5)
 
     # create the Dataframe
+    print("Creating dataframe")
     for country, values in COUNTRIES_DATA.items():
-        print("Creating dataframe")
         # Create a dictionary to hold the row data
         row_data = {'Country': country}
 
@@ -168,4 +162,102 @@ def getCountryCodes():
 
 def save_data_to_csv(name, dataframe):
     dataframe.to_csv(Path(DATA_DIR, name))
-    return "Save compled"
+    return "Save completed"
+
+
+def load_datasets():
+    list_dataframe = {}
+    for i,filename in enumerate(os.listdir(DATA_DIR)):
+        df_name = f"df_{filename.split('.')[0]}"
+        if filename.split('.')[-1] == 'csv':
+            list_dataframe[df_name] = pd.read_csv(Path(DATA_DIR,filename),sep=',', index_col=[0])
+        elif (filename.split('.')[-1] == 'xlsx') or (filename.split('.')[-1] == 'xls'):
+            list_dataframe[df_name] = pd.read_excel(Path(DATA_DIR,filename))
+        #df_name = f"df_{filename.split('.')[0]}"
+        print(filename)
+    return list_dataframe
+
+
+def clean_and_convert(value):
+        if isinstance(value, str):
+            value = value.replace(',', '.')
+            value = ''.join(filter(lambda x: x.isdigit() or x in ['-', '.', ''], value))
+        return float(value)
+
+
+def find_columns_conditions(df):
+    total_rows = df.shape[0]
+    
+    colToDel = [col for col in df.columns if (df[col].isnull().sum() / total_rows) > FILTERS_PARAMS['NAN_TRESHOLD']]
+    
+    constant_cols = [col for col in df.columns if df[col].nunique() == 1]
+    
+    min_completion_cols = [col for col in df.columns if (df[col].count() / total_rows) < FILTERS_PARAMS['MIN_COMPLETION_RATE']]
+    
+    return colToDel+constant_cols+min_completion_cols
+
+
+def transform_datasets():
+    datasets = load_datasets()
+    indicators = datasets['df_indicators']
+    country_codes = datasets['df_country_codes']
+    income = datasets['df_CLASS']
+
+    #Clean indicators dataframe
+    indicators.replace("No data available", float('nan'), inplace=True)
+    indicators.columns = indicators.columns.str.lower()
+    indicators['country'] = indicators['country'].str.strip()
+    cols_to_convert = indicators.columns.difference(['country'])
+    pd.options.display.float_format = '{:.2f}'.format
+    indicators[cols_to_convert] = indicators[cols_to_convert].applymap(clean_and_convert)
+    
+    indicators = indicators.fillna(indicators.median(numeric_only=True))    
+    cols_to_del  = find_columns_conditions(indicators)
+    indicators.drop(columns=cols_to_del,axis=1,inplace=True)
+
+    if len(indicators.duplicated().value_counts())>0:
+        indicators.drop_duplicates(inplace=True)
+
+    #Clean country_codes dataframe
+    country_codes= country_codes.dropna(subset=['name'])
+
+    country_codes["name"]=country_codes["name"].str.lower()
+    country_codes["region"]=country_codes["region"].str.lower()
+
+    country_codes = country_codes.applymap(unidecode.unidecode)
+
+    if len(country_codes.duplicated().value_counts())>0:
+        country_codes.drop_duplicates(inplace=True)  
+
+    #Clean income dataframe
+    income = income[['Code','Region','Income group']]    
+    income.columns = income.columns.str.lower()  
+    income = income.dropna(subset=['region'])
+    mode_value = income['income group'].mode().iloc[0]
+    income['income group'] = income['income group'].fillna(mode_value)
+
+    if len(income.duplicated().value_counts())>0:
+        income.drop_duplicates(inplace=True)    
+
+    cleaned_datasets = {}
+    cleaned_datasets["indicators"] = indicators
+    cleaned_datasets["income"] = income
+    cleaned_datasets["country_codes"] = country_codes
+
+    return cleaned_datasets
+
+
+def merge_datasets(cleaned_datasets):
+    indicators = cleaned_datasets['indicators']
+    country_codes = cleaned_datasets['country_codes']
+    income = cleaned_datasets['income']
+
+    merged_df_1 = pd.merge(left=country_codes, right=indicators, left_on='name', right_on='country', how='left')
+    print(merged_df_1)
+    final_dataset = pd.merge(left=merged_df_1, right=income[['code', 'income group']], left_on='id', right_on='code', how='left')
+    print(final_dataset)
+    final_dataset.columns = [unidecode.unidecode(col) for col in final_dataset.columns]
+    final_dataset = final_dataset[FILTERS_PARAMS['FEATURES'].keys()]
+    final_dataset.replace({"niveau de vie": FILTERS_PARAMS['INCOME_MAPPING']}, inplace=True)
+
+    return final_dataset
