@@ -1,4 +1,4 @@
-\__pycache__
+__pycache__/
 __pycache__
 
 .pyc
@@ -6,3 +6,6 @@ __pycache__
 
 # Ignore environment-related files
 env/
+
+data
+/data
