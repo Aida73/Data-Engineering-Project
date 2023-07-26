@@ -170,7 +170,7 @@ def load_datasets():
     for i,filename in enumerate(os.listdir(DATA_DIR)):
         df_name = f"df_{filename.split('.')[0]}"
         if filename.split('.')[-1] == 'csv':
-            list_dataframe[df_name] = pd.read_csv(Path(DATA_DIR,filename),sep=',', index_col=[0])
+            list_dataframe[df_name] = pd.read_csv(Path(DATA_DIR,filename),sep=',')
         elif (filename.split('.')[-1] == 'xlsx') or (filename.split('.')[-1] == 'xls'):
             list_dataframe[df_name] = pd.read_excel(Path(DATA_DIR,filename))
         #df_name = f"df_{filename.split('.')[0]}"
@@ -206,14 +206,14 @@ def transform_datasets():
     #Clean indicators dataframe
     indicators.replace("No data available", float('nan'), inplace=True)
     indicators.columns = indicators.columns.str.lower()
-    indicators['country'] = indicators['country'].str.strip()
     cols_to_convert = indicators.columns.difference(['country'])
     pd.options.display.float_format = '{:.2f}'.format
     indicators[cols_to_convert] = indicators[cols_to_convert].applymap(clean_and_convert)
     
-    indicators = indicators.fillna(indicators.median(numeric_only=True))    
+    indicators['country'] = indicators['country'].str.strip()
     cols_to_del  = find_columns_conditions(indicators)
     indicators.drop(columns=cols_to_del,axis=1,inplace=True)
+    indicators = indicators.fillna(indicators.median(numeric_only=True))
 
     if len(indicators.duplicated().value_counts())>0:
         indicators.drop_duplicates(inplace=True)
@@ -253,11 +253,10 @@ def merge_datasets(cleaned_datasets):
     income = cleaned_datasets['income']
 
     merged_df_1 = pd.merge(left=country_codes, right=indicators, left_on='name', right_on='country', how='left')
-    print(merged_df_1)
     final_dataset = pd.merge(left=merged_df_1, right=income[['code', 'income group']], left_on='id', right_on='code', how='left')
-    print(final_dataset)
     final_dataset.columns = [unidecode.unidecode(col) for col in final_dataset.columns]
     final_dataset = final_dataset[FILTERS_PARAMS['FEATURES'].keys()]
     final_dataset.replace({"niveau de vie": FILTERS_PARAMS['INCOME_MAPPING']}, inplace=True)
 
+    final_dataset.dropna(inplace=True)
     return final_dataset
