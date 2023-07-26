@@ -63,7 +63,6 @@ def getCountriesData(page):
 
     # Parse the linked page's HTML content
     linked_page_soup = BeautifulSoup(linked_page_response.text, "html.parser")
-    time.sleep(5)
     indicators = linked_page_soup.find_all(
         "div", {'class': 'indicator-item__wrapper'})
     indicators_values = getIndicatorsValues(indicators)
@@ -77,11 +76,11 @@ def getCountriesData(page):
 
 # create the indicators dataframe
 def getIndicatorsDataframe():
-    batch_size = 60  # Set batch size and initialize counters
+    batch_size = 20
     _, countries_pages = getCountries()
     current_batch = 0
     indicators_titles_list = getIndicatorsTitles()
-    total_batches = (len(countries_pages))//batch_size
+    total_batches = (len(countries_pages)//217)//batch_size
 
     # save data to dataframe
     df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
@@ -99,11 +98,12 @@ def getIndicatorsDataframe():
                 print(
                     f"Request for {page} timed out. Skipping to the next page.")
 
+        # Increment the current batch counter
         current_batch += batch_size
-        # time.sleep(5)
 
     # create the Dataframe
     print("Creating dataframe")
+    print(indicators_titles_list)
     for country, values in COUNTRIES_DATA.items():
         # Create a dictionary to hold the row data
         row_data = {'Country': country}
@@ -170,31 +170,34 @@ def load_datasets():
     for filename in os.listdir(DATA_DIR):
         df_name = f"df_{filename.split('.')[0]}"
         if filename.split('.')[-1] == 'csv':
-            list_dataframe[df_name] = pd.read_csv(Path(DATA_DIR,filename),sep=',', index_col=[0])
+            list_dataframe[df_name] = pd.read_csv(
+                Path(DATA_DIR, filename), sep=',', index_col=[0])
         elif (filename.split('.')[-1] == 'xlsx') or (filename.split('.')[-1] == 'xls'):
-            list_dataframe[df_name] = pd.read_excel(Path(DATA_DIR,filename))
+            list_dataframe[df_name] = pd.read_excel(Path(DATA_DIR, filename))
         print(filename)
     return list_dataframe
 
 
 def clean_and_convert(value):
-        if isinstance(value, str):
-            value = value.replace(',', '.')
-            value = ''.join(filter(lambda x: x.isdigit() or x in ['-', '.', ''], value))
-        return float(value)
+    if isinstance(value, str):
+        value = value.replace(',', '.')
+        value = ''.join(filter(lambda x: x.isdigit()
+                        or x in ['-', '.', ''], value))
+    return float(value)
 
 
 def find_columns_conditions(df):
     total_rows = df.shape[0]
-    
-    colToDel = [col for col in df.columns if (df[col].isnull().sum() / total_rows) > FILTERS_PARAMS['NAN_TRESHOLD']]
-    
-    constant_cols = [col for col in df.columns if df[col].nunique() == 1]
-    
-    min_completion_cols = [col for col in df.columns if (df[col].count() / total_rows) < FILTERS_PARAMS['MIN_COMPLETION_RATE']]
-    
-    return colToDel+constant_cols+min_completion_cols
 
+    colToDel = [col for col in df.columns if (
+        df[col].isnull().sum() / total_rows) > FILTERS_PARAMS['NAN_TRESHOLD']]
+
+    constant_cols = [col for col in df.columns if df[col].nunique() == 1]
+
+    min_completion_cols = [col for col in df.columns if (
+        df[col].count() / total_rows) < FILTERS_PARAMS['MIN_COMPLETION_RATE']]
+
+    return colToDel+constant_cols+min_completion_cols
 
 
 def transform_datasets():
@@ -208,7 +211,8 @@ def transform_datasets():
         indicators.columns = indicators.columns.str.lower()
         cols_to_convert = indicators.columns.difference(['country'])
         pd.options.display.float_format = '{:.2f}'.format
-        indicators[cols_to_convert] = indicators[cols_to_convert].applymap(clean_and_convert)
+        indicators[cols_to_convert] = indicators[cols_to_convert].applymap(
+            clean_and_convert)
         indicators['country'] = indicators['country'].str.strip()
         cols_to_del = find_columns_conditions(indicators)
         indicators.drop(columns=cols_to_del, axis=1, inplace=True)
@@ -246,11 +250,16 @@ def merge_datasets(cleaned_datasets):
         country_codes = cleaned_datasets['country_codes']
         income = cleaned_datasets['income']
 
-        merged_df_1 = pd.merge(left=country_codes, right=indicators, left_on='name', right_on='country', how='left')
-        final_dataset = pd.merge(left=merged_df_1, right=income[['code', 'income group']], left_on='id', right_on='code', how='left')
-        final_dataset.columns = [unidecode.unidecode(col) for col in final_dataset.columns]
+        merged_df_1 = pd.merge(left=country_codes, right=indicators,
+                               left_on='name', right_on='country', how='left')
+        final_dataset = pd.merge(left=merged_df_1, right=income[[
+                                 'code', 'income group']], left_on='id', right_on='code', how='left')
+        final_dataset.columns = [unidecode.unidecode(
+            col) for col in final_dataset.columns]
         final_dataset = final_dataset[FILTERS_PARAMS['FEATURES'].keys()]
-        final_dataset.replace({"niveau de vie": FILTERS_PARAMS['INCOME_MAPPING']}, inplace=True)
+        final_dataset.rename(columns=FILTERS_PARAMS['FEATURES'], inplace=True)
+        final_dataset.replace(
+            {"niveau de vie": FILTERS_PARAMS['INCOME_MAPPING']}, inplace=True)
 
         final_dataset.dropna(inplace=True)
         return final_dataset
