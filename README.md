@@ -35,6 +35,7 @@ Avant de lancer le pipeline ETL, assurer vous d'avoir python déjà installé
 ## Structure du projet
 ```bash
 .
+├── README.md
 ├── __pycache__
 │   ├── params.cpython-311.pyc
 │   └── utils.cpython-311.pyc
@@ -47,7 +48,10 @@ Avant de lancer le pipeline ETL, assurer vous d'avoir python déjà installé
 ├── download.py
 ├── extract.py
 ├── load.py
+├── load_data_viz.py
 ├── requirements.txt
+├── s3savedData
+│   ├── 20230727_023219_word_bank_indicators.csv
 ├── settings
 │   ├── __init__.py
 │   ├── __pycache__
@@ -78,6 +82,13 @@ Pour lancer localement la Transformation des données collectées:
 
 Pour cette partie on utilse AWS pour charger les données dans un bucket S3. POur ce faire assurer vous de mettre dans un fichier `.env` les informations de connexion du bucket:
 `AWS_ACCESS_KEY_ID` et `AWS_SECRET_ACCESS_KEY`
+
+On peut récupérer les données du bucket en exécutant:
+```bash
+    python load_data.py
+````
+
+Les données récupérées seront stockées dans le dossier s3savedData
 
 
 ## Orchestration

@@ -1,0 +1,20 @@
+,code_pays,pays,region,population_totale,migration nette,croissance annuelle du PIB,pourcentage total de la population au chomage,"inflation, prix annuel a la consommation",acces a l'electricite(%population),indice du capital humain (indice entre 0 et 1),niveau de vie
+0,ABW,Aruba,Amerique latine et Caraibes,106445.0,501.0,17.2,6.8999999999999995,4.3,100.0,0.6,eleve
+1,AFG,Afghanistan,Asie du Sud,41128771.0,-183672.0,-20.7,11.7,2.3,97.7,0.4,faible
+2,AGO,Angola,Afrique subsaharienne,35588987.0,29089.0,3.0,10.2,25.8,48.2,0.4,moyen
+3,ALB,Albanie,Europe et Asie centrale,2775634.0,-10612.0,4.8,11.8,6.7,100.0,0.6,>moyenne
+4,AND,Andorre,Europe et Asie centrale,79824.0,1377.0,8.8,6.8999999999999995,6.95,100.0,0.6,eleve
+8,ARM,Armenie,Europe et Asie centrale,2780469.0,-12825.0,12.6,12.6,8.6,100.0,0.6,>moyenne
+10,ATG,Antigua-et-Barbuda,Amerique latine et Caraibes,93763.0,0.0,8.5,6.8999999999999995,7.5,100.0,0.6,eleve
+11,AUS,Australie,Asie de l'Est et Pacifique,25978935.0,117929.0,3.6,3.7,6.6,100.0,0.8,eleve
+12,AUT,Autriche,Europe et Asie centrale,9042528.0,20314.0,5.0,4.7,8.5,100.0,0.7,eleve
+13,AZE,Azerbaidjan,Europe et Asie centrale,10175016.0,1084.0,4.6,5.5,13.9,100.0,0.6,>moyenne
+18,BGD,Bangladesh,Asie du Sud,171186372.0,-174500.0,7.1,4.7,7.7,99.0,0.5,moyen
+20,BHR,Bahrein,Afrique du Nord et Moyen-Orient,1472233.0,-9150.0,4.9,1.4,3.6,100.0,0.7,eleve
+21,BHS,Bahamas,Amerique latine et Caraibes,409984.0,485.0,14.4,10.1,5.6,100.0,0.6,eleve
+23,BLR,Belarus,Europe et Asie centrale,9208701.0,12961.0,-4.7,4.2,15.2,100.0,0.7,>moyenne
+28,BRB,Barbade,Amerique latine et Caraibes,281635.0,-28.0,10.0,8.2,4.1,100.0,0.6,eleve
+53,DEU,Allemagne,Europe et Asie centrale,84079811.0,312735.0,1.8,3.0,6.9,100.0,0.8,eleve
+58,DZA,Algerie,Afrique du Nord et Moyen-Orient,44903225.0,-18797.0,3.1,11.6,9.3,99.8,0.5,moyen
+203,SAU,Arabie saoudite,Afrique du Nord et Moyen-Orient,36408820.0,-153883.0,8.7,5.6,2.5,100.0,0.6,eleve
+262,ZAF,Afrique du Sud,Afrique subsaharienne,59893885.0,10934.0,2.0,29.8,7.0,89.3,0.4,>moyenne

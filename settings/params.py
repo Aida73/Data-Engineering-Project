@@ -1,4 +1,8 @@
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # home_diectory
 HOME_DIR = Path.cwd()
@@ -24,6 +28,14 @@ USER_AGENTS_LIST = [
 # will stock all the data about the indicators
 COUNTRIES_DATA = dict()
 
+# S3
+CREDENTIALS = {
+    'aws_access_key_id': os.environ.get('AWS_ACCESS_KEY_ID'),
+    'aws_secret_access_key': os.environ.get('AWS_SECRET_ACCESS_KEY')
+}
+
+BUCKET_NAME = 'worldbankdatabucket'
+
 
 FILTERS_PARAMS = {
     "MIN_COMPLETION_RATE": 0.5,
@@ -47,11 +59,11 @@ FILTERS_PARAMS = {
         'region',
         'income group'
     },
-    "INCOME_MAPPING":{
-        'Low income': 'faible', 
-        'Lower middle income': 'moyen', 
+    "INCOME_MAPPING": {
+        'Low income': 'faible',
+        'Lower middle income': 'moyen',
         'Upper middle income': '>moyenne',
-       'High income': 'eleve'
+        'High income': 'eleve'
     }
 }
 

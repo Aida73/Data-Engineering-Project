@@ -226,8 +226,8 @@ def transform_datasets():
     if 'df_country_codes' in datasets:
         country_codes = datasets['df_country_codes']
         country_codes = country_codes.dropna(subset=['name'])
-        country_codes["name"] = country_codes["name"].str.lower()
-        country_codes["region"] = country_codes["region"].str.lower()
+        # country_codes["name"] = country_codes["name"].str.lower()
+        # country_codes["region"] = country_codes["region"].str.lower()
         country_codes = country_codes.applymap(unidecode.unidecode)
         country_codes.drop_duplicates(inplace=True)
         cleaned_datasets["country_codes"] = country_codes
@@ -251,9 +251,12 @@ def merge_datasets(cleaned_datasets):
         indicators = cleaned_datasets['indicators']
         country_codes = cleaned_datasets['country_codes']
         income = cleaned_datasets['income']
+        print(country_codes['name'])
+        print(indicators['country'])
 
         merged_df_1 = pd.merge(left=country_codes, right=indicators,
                                left_on='name', right_on='country', how='left')
+        print(merged_df_1.head())
         final_dataset = pd.merge(left=merged_df_1, right=income[[
                                  'code', 'income group']], left_on='id', right_on='code', how='left')
         final_dataset.columns = [unidecode.unidecode(
