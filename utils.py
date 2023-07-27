@@ -82,41 +82,43 @@ def getIndicatorsDataframe():
     indicators_titles_list = getIndicatorsTitles()
     total_batches = (len(countries_pages)//217)//batch_size
 
-    # save data to dataframe
-    df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
+    if (len(indicators_titles_list) > 0):
+        # save data to dataframe
+        df = pd.DataFrame(columns=['Country'] + indicators_titles_list)
 
-    # Iterate over the sections in batches
-    for batch in range(total_batches + 1):
-        # Get the current batch of sections
-        batch_sections = countries_pages[current_batch:current_batch + batch_size]
+        # Iterate over the sections in batches
+        for batch in range(total_batches + 1):
+            # Get the current batch of sections
+            batch_sections = countries_pages[current_batch:current_batch + batch_size]
 
-        # Iterate over the sections in the current batch
-        for page in batch_sections:
-            try:
-                getCountriesData(page)
-            except requests.exceptions.Timeout:
-                print(
-                    f"Request for {page} timed out. Skipping to the next page.")
+            # Iterate over the sections in the current batch
+            for page in batch_sections:
+                try:
+                    getCountriesData(page)
+                except requests.exceptions.Timeout:
+                    print(
+                        f"Request for {page} timed out. Skipping to the next page.")
 
-        # Increment the current batch counter
-        current_batch += batch_size
+            # Increment the current batch counter
+            current_batch += batch_size
 
-    # create the Dataframe
-    print("Creating dataframe")
-    print(indicators_titles_list)
-    for country, values in COUNTRIES_DATA.items():
-        # Create a dictionary to hold the row data
-        row_data = {'Country': country}
+        # create the Dataframe
+        print("Creating dataframe")
+        print(indicators_titles_list)
+        for country, values in COUNTRIES_DATA.items():
+            # Create a dictionary to hold the row data
+            row_data = {'Country': country}
 
-        for i, value in enumerate(values):
-            title = indicators_titles_list[i] if i < len(
-                indicators_titles_list) else ''
-            row_data[title] = value
+            for i, value in enumerate(values):
+                title = indicators_titles_list[i] if i < len(
+                    indicators_titles_list) else ''
+                row_data[title] = value
 
-        # Append the row data to the DataFrame
-        df = df._append(row_data, ignore_index=True)
+            # Append the row data to the DataFrame
+            df = df._append(row_data, ignore_index=True)
 
-    return df
+        return df
+    return None
 
 
 # get countries code and region
