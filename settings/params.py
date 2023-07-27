@@ -45,12 +45,12 @@ FILTERS_PARAMS = {
         'country': 'pays',
         'region': 'region',
         'population, total': 'population_totale',
-        'migration nette': 'migration nette',
-        'croissance du pib (% annuel)': 'croissance annuelle du PIB',
-        'chomage, total (% de la population) (estimation modelisee oit)': 'pourcentage total de la population au chomage',
-        'inflation, prix a la consommation (% annuel)': 'inflation, prix annuel a la consommation',
-        "acces a l'electricite (% de la population)": "acces a l'electricite(%population)",
-        'indice du capital humain (echelle comprise entre 0 et 1)': 'indice du capital humain (indice entre 0 et 1)',
+        'migration nette': 'migration_nette',
+        'croissance du pib (% annuel)': 'croissance_annuelle_PIB',
+        'chomage, total (% de la population) (estimation modelisee oit)': 'pourcentage_total_population_chomage',
+        'inflation, prix a la consommation (% annuel)': 'inflation_prix_annuel_consommation',
+        "acces a l'electricite (% de la population)": "acces_electricite(%population)",
+        'indice du capital humain (echelle comprise entre 0 et 1)': 'indi_capital_humain(indice entre 0 et 1)',
         'income group': 'niveau de vie'
     },
     "FEATURES_STR": {
