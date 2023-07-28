@@ -83,6 +83,11 @@ Pour lancer localement la Transformation des données collectées:
 Pour cette partie on utilse AWS pour charger les données dans un bucket S3. POur ce faire assurer vous de mettre dans un fichier `.env` les informations de connexion du bucket:
 `AWS_ACCESS_KEY_ID` et `AWS_SECRET_ACCESS_KEY`
 
+On peut charger les données dans le bucket en exécutant:
+```bash
+    python load.py
+````
+
 On peut récupérer les données du bucket en exécutant:
 ```bash
     python load_data.py
