@@ -265,5 +265,6 @@ def merge_datasets(cleaned_datasets):
             {"niveau de vie": FILTERS_PARAMS['INCOME_MAPPING']}, inplace=True)
 
         final_dataset.dropna(inplace=True)
+        final_dataset.index.name = 'id'
         return final_dataset
     return None

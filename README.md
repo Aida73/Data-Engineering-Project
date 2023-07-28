@@ -88,9 +88,10 @@ On peut récupérer les données du bucket en exécutant:
     python load_data.py
 ````
 
-Les données récupérées seront stockées dans le dossier s3savedData
-
+## Visualisation
+La finalité de ce pipeline c'est de mettre en place un dashoboard qui aidera à la prise de décision.
+![App Screenshot](/screenshots/DEDemo.mov?raw=true)
 
 ## Orchestration
 
-Ce pipeline est orchestré en utilant Apache Airflow
+Ce pipeline est orchestré en utilant Apache Airflow.
