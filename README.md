@@ -90,10 +90,14 @@ On peut récupérer les données du bucket en exécutant:
 
 ## Visualisation
 La finalité de ce pipeline c'est de mettre en place un dashoboard qui aidera à la prise de décision.
+
+
 ![App Screenshot](/screenshots/demo.gif?raw=true)
 
 ## Orchestration
 
 Ce pipeline est orchestré en utilant Apache Airflow.
 ![App Screenshot](/screenshots/airflow1.png?raw=true)
+
+
 ![App Screenshot](/screenshots/airflow2.png?raw=true)
