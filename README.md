@@ -1,7 +1,7 @@
 
 # Mise en place d'un pipeline ETL
 
-Ce projet consiste à mettre en place un pipeline ETL (Extract, Transform, Load) sur les données de la banque mondiale. On s'interressra particulièrement aux données sur les indicateurs de développement.
+Ce projet consiste à mettre en place un pipeline ETL (Extract, Transform, Load) sur les données de la banque mondiale. On s'interessera particulièrement aux données sur les indicateurs de développement.
  
 
 
