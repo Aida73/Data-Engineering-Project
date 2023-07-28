@@ -8,7 +8,6 @@ __pycache__
 env/
 .env
 
-data/**
-/data
-/s3SavedData
-/screenshots
+data/
+s3SavedData/
+screenshots/
